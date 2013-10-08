@@ -2,6 +2,8 @@ class JokesController < ApplicationController
   # GET /jokes
   # GET /jokes.json
 
+before_filter :authenticate_user!
+
   def index
     @jokes = Joke.all
 

@@ -7,6 +7,7 @@ Given /^I have no jokes/ do
   Joke.delete_all
 end
 
+
 Then /^I should have ([0-9]+) articles?$/ do |count|
   Joke.count.should == count.to_i
 end
