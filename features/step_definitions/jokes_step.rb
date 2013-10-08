@@ -11,3 +11,4 @@ end
 Then /^I should have ([0-9]+) articles?$/ do |count|
   Joke.count.should == count.to_i
 end
+
