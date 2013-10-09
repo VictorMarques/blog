@@ -23,9 +23,9 @@ Scenario: Jokes List
     And I should see "Praça é Nossa"
 
     Scenario: Edit Joke
-      Given I have jokes titled sogra, fail
+      Given I have jokes titled sogra, cocao
       When I am on the list of jokes
-      And I follow "edit_2"
+      And I follow "edit_1"
       And I fill in "Title" with "Praça é Nossa"
       And I fill in "Author" with "desconhecido"
       And I fill in "Joke" with "Cocao"
