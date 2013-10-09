@@ -33,17 +33,15 @@ Scenario: Jokes List
       Then I should see "Joke was successfully updated."
       And I should see "Praça é Nossa"
 
-    Scenario:Destroy Joke
-      Given I have jokes titled sogra, velho
+    Scenario: Destroy Joke
+      And I have jokes titled sogra, fail
       When I am on the list of jokes
-      And I follow "delete_1"
-      Then I should confirm dialog
+      And I should see "sogra"
+      And I should see "Destroy"
+      And I follow "delete_1" and accept alert
 
     Scenario: Show Joke
       Given I have jokes titled sogra
       When I am on the list of jokes
       And I follow "Show"
       Then I should see "sogra"
-
-
-
