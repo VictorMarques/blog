@@ -18,8 +18,8 @@
     <td><%= joke.date %></td>
     <td><%= joke.joke %></td>
     <td><%= link_to 'Show', joke %></td>
-    <td><%= link_to 'Edit', edit_joke_path(joke) %></td>
-    <td><%= link_to 'Destroy', joke, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Edit', edit_joke_path(joke), id: "edit_#{joke.id}" %></td>
+    <td><%= link_to 'Destroy', joke, method: :delete, data: { confirm: 'Are you sure?' }, id: "delete_#{joke.id}" %></td>
   </tr>
 <% end %>
 </table>

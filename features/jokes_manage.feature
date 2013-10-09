@@ -3,17 +3,18 @@ Feature: Contect me
   As an User
   I want a to jokes list
 
-Scenario: Jokes List
+Background: Create User
   Given I create user as victor@email.com with 12345678
+
+Scenario: Jokes List
   Given I have jokes titled sogra
   When  I go to the list of jokes
   Then  I should see "sogra"
 
   Scenario: Create Joke
-    Given I create user as victor@email.com with 12345678
     Given I have no jokes
-    And I am on the list of jokes
-    When I follow "New Joke"
+    When I am on the list of jokes
+    And I follow "New Joke"
     And I fill in "Title" with "Praça é Nossa"
     And I fill in "Author" with "desconhecido"
     And I fill in "Joke" with "Cocao"
@@ -22,10 +23,9 @@ Scenario: Jokes List
     And I should see "Praça é Nossa"
 
     Scenario: Edit Joke
-      Given I create user as victor@email.com with 12345678
-      Given I have jokes titled sogra
-      And I am on the list of jokes
-      And I follow "Edit"
+      Given I have jokes titled sogra, fail
+      When I am on the list of jokes
+      And I follow "edit_2"
       And I fill in "Title" with "Praça é Nossa"
       And I fill in "Author" with "desconhecido"
       And I fill in "Joke" with "Cocao"
@@ -34,16 +34,14 @@ Scenario: Jokes List
       And I should see "Praça é Nossa"
 
     Scenario:Destroy Joke
-      Given I create user as victor@email.com with 12345678
-      Given I have jokes titled sogra
-      And I am on the list of jokes
-      And I follow "Destroy"
-      Given I have no jokes
+      Given I have jokes titled sogra, velho
+      When I am on the list of jokes
+      And I follow "delete_1"
+      Then I should confirm dialog
 
-     Scenario: Show Joke
-      Given I create user as victor@email.com with 12345678
+    Scenario: Show Joke
       Given I have jokes titled sogra
-      And I am on the list of jokes
+      When I am on the list of jokes
       And I follow "Show"
       Then I should see "sogra"
 

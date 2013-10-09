@@ -22,11 +22,16 @@ end
 
 gem 'jquery-rails'
 gem 'devise'
+gem 'haml'
 
 group :development, :test do
   gem "rspec-rails", ">= 2.0.1"
   gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
+  gem 'rspec'
+  gem 'cucumber'
+  gem 'webrat'
+  gem 'selenium-webdriver'
 end
 
 # To use ActiveModel has_secure_password
