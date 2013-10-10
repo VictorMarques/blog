@@ -16,5 +16,3 @@ end
 Given /^I sign out$/ do
   visit new_user_session_path
 end
-
-

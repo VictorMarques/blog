@@ -33,10 +33,11 @@ Scenario: Jokes List
       Then I should see "Joke was successfully updated."
       And I should see "Praça é Nossa"
 
+@javascript
     Scenario: Destroy Joke
-      And I have jokes titled sogra, fail
+      And I have jokes titled coconut
       When I am on the list of jokes
-      And I should see "sogra"
+      And I should see "coconut"
       And I should see "Destroy"
       And I follow "delete_1" and accept alert
 
