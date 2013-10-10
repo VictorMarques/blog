@@ -76,7 +76,7 @@ before_filter :authenticate_user!
   # DELETE /jokes/1
   # DELETE /jokes/1.json
   def destroy
-    @joke = Joke.find_by_id(params[:id])
+    @joke = Joke.find(params[:id])
     @joke.destroy
 
     respond_to do |format|

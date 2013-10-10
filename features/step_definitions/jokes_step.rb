@@ -12,7 +12,7 @@ Then /^I should have ([0-9]+) articles?$/ do |count|
   Joke.count.should == count.to_i
 end
 
-When /^I follow "(.+)" and accept alert$/ do |link|
+When /^I follow "([^\"]*)" and accept alert$/ do |link|
   click_link(link)
   page.driver.browser.switch_to.alert.accept
 end
